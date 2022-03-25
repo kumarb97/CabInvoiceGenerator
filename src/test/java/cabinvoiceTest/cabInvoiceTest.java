@@ -1,6 +1,6 @@
 /*
- * Step-3_Invoice generator should take multiple rides and gives average fare price
- *        and number of rides.
+ * Step-4_Invoice Service
+ *        
  */
 package cabinvoiceTest;
 import org.junit.Before;
@@ -9,6 +9,7 @@ import org.junit.Test;
 import cabinvoiceMain.CabInvoice;
 import cabinvoiceMain.Ride;
 import cabinvoiceMain.InvoiceSummary;
+import cabinvoiceMain.InvoiceService;
 
 public class cabInvoiceTest {
 	CabInvoice cabinvoice = null;
@@ -48,4 +49,20 @@ public class cabInvoiceTest {
 		InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2,36.0);
 		Assert.assertEquals(expectedInvoiceSummary,summary);
 	}
+	
+	/*
+     * created givenUserID_ReturnInvoice method to test by giving userID
+     * to return invoice
+     */
+    @Test
+    public void givenUserID_ReturnInvoice(){
+        Ride rides[] = { new Ride(1.1, 1),
+                new Ride(10.0, 5),
+                new Ride(5.0, 6),
+                new Ride(8.9, 1),
+                new Ride(9.0, 9) };
+        int userID = 123;
+        InvoiceService invoice1 = new InvoiceService(userID, rides);
+        Assert.assertNotNull(invoice1);
+    }
 }

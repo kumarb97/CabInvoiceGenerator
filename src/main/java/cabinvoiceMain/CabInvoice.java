@@ -1,6 +1,6 @@
 /*
- * Step-3_Invoice generator should take multiple rides and gives average fare price
- *        and number of rides.
+ * Step-3_Invoice Service.
+ *        
  */
 package cabinvoiceMain;
 
