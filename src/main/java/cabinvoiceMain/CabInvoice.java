@@ -1,5 +1,5 @@
 /*
- * Step-3_Invoice Service.
+ * Step-5_Premium Rides
  *        
  */
 package cabinvoiceMain;
@@ -44,6 +44,19 @@ public class CabInvoice {
 		}
 		return new InvoiceSummary(rides.length,totalFare);
 	}
+	
+	/***
+     * created getRideType method define the type of ride
+     * @param rideType - to compare given type
+     */
+    public void getRideType(String rideType) {
+        String type = "Premium";
+        if (rideType.equalsIgnoreCase(type)) {
+            COST_PER_KM = 15;
+            COST_PER_TIME = 2;
+            MINIMUM_FARE = 20;
+        }
+    }
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Cab Invoice Service");

@@ -1,5 +1,5 @@
 /*
- * Step-4_Invoice Service
+ * Step-5_Premium Rides
  *        
  */
 package cabinvoiceTest;
@@ -64,5 +64,19 @@ public class cabInvoiceTest {
         int userID = 123;
         InvoiceService invoice1 = new InvoiceService(userID, rides);
         Assert.assertNotNull(invoice1);
+    }
+    
+    /***
+     * created givenRideType_ShouldReturnFare method to test by giving ride type "Premium"
+     * should return total fare
+     */
+    @Test
+    public void givenRideType_ShouldReturnFare(){
+        double distance = 1;
+        int time = 1;
+        String rideType = "Premium";
+        cabinvoice.getRideType(rideType);
+        double fare = cabinvoice.calculateFare(distance, time);
+        Assert.assertEquals(20, fare, 0.0);
     }
 }
